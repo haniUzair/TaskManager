@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="navigation_calendar" type="id" />
+    <item name="task_completed" type="id" />
+    <item name="btn_create_task" type="id" />
+    <item name="tv_category_label" type="id" />
+    <item name="et_task_description" type="id" />
+    <item name="Description" type="id" />
+    <item name="et_task_date" type="id" />
+    <item name="et_start_time" type="id" />
+    <item name="et_add_category" type="id" />
+    <item name="chip_group" type="id" />
+    <item name="endValue" type="id"/>
+</resources>

@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Projectfinal</string>
+    //Headings
+    <string name="heading_one">"Stay Organized and Productive</string>
+    <string name="heading_two">Plan, Track, and Achieve</string>
+    <string name="heading_three">Your Personal Productivity Assistant</string>
+    <string name="heading_fourth">Never Miss a Deadline</string>
+
+    //Description
+    <string name="desc_one">Effortlessly manage your tasks, projects, and deadlines with our intuitive task management app. Streamline your workflow and achieve your goals.</string>
+    <string name="desc_two">From planning to completion, keep track of your tasks and projects all in one place. Stay on top of your to-do list with our powerful tools.</string>
+    <string name="desc_three">Customize your task management experience. Tailor the app to fit your workflow and personal preferences, making productivity a breeze.</string>
+    <string name="desc_fourth">Stay ahead of your schedule with automated reminders and notifications. Our app ensures you never forget an important task.</string>
+    <string name="title_activity_login">Login</string>
+
+    <string name="june_28_2024">June 28, 2024</string>
+    <string name="find_task">Find task</string>
+    <string name="next_tasks">Next Tasks</string>
+    <string name="calendar_screen">Calendar Screen</string>
+    <string name="mark_task">Mark Task</string>
+    <string name="task_title">Task Title</string>
+    <string name="todo">TODO</string>
+    <string name="title">Title</string>
+    <string name="date">Date</string>
+    <string name="designer">Designer</string>
+
+</resources>
