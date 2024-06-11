@@ -36,7 +36,7 @@
             android:textStyle="bold" />
 
         <!-- Profile image -->
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profileImage"
             android:layout_width="100dp"
             android:layout_height="100dp"
@@ -55,7 +55,9 @@
             android:layout_centerHorizontal="true"
             android:text="@string/change_image"
             android:textColor="@android:color/white"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:clickable="true"
+            android:focusable="true" />
 
     </RelativeLayout>
 
