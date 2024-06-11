@@ -47,7 +47,9 @@ public class HomeActivity extends AppCompatActivity {
             if (itemId == R.id.navigation_dashboard) {
                 selectedFragment = new TaskManagementFragment();
             } else if (itemId == R.id.navigation_notifications) {
-                selectedFragment = new NotificationsFragment();
+                Intent intent = new Intent(HomeActivity.this, task_details.class);
+                startActivity(intent);
+                return true;
             } else if (itemId == R.id.navigation_profile) {
                 // Open the ProfileActivity
                 Intent intent = new Intent(HomeActivity.this, ProfileFragment.class);
