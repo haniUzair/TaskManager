@@ -52,7 +52,7 @@ public class CreateTaskFragment extends Fragment {
 
         // Initialize Firebase
         auth = FirebaseAuth.getInstance();
-        databaseReference = FirebaseDatabase.getInstance().getReference("Tasks");
+        databaseReference = FirebaseDatabase.getInstance().getReference("Tasks"); // Make sure this points to the correct location
 
         // Handle date picker
         etTaskDate.setOnClickListener(v -> showDatePickerDialog());
@@ -112,6 +112,18 @@ public class CreateTaskFragment extends Fragment {
 
         timePickerDialog.show();
     }
+    public static CreateTaskFragment newInstance(String title, String date, String startTime, String endTime, String description) {
+        CreateTaskFragment fragment = new CreateTaskFragment();
+        Bundle args = new Bundle();
+        args.putString("title", title);
+        args.putString("date", date);
+        args.putString("startTime", startTime);
+        args.putString("endTime", endTime);
+        args.putString("description", description);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
 
     private void addCategory() {
         String category = etCategory.getText().toString().trim();

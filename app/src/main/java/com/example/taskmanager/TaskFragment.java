@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -112,9 +113,29 @@ public class TaskFragment extends Fragment {
         String currentDate = DateFormat.getDateInstance().format(new Date());
         tvDate.setText(currentDate);
         return view;
+
+    }
+
+    public void onRescheduleClicked() {
+        onRescheduleClicked(null);
+    }
+
+    public void onRescheduleClicked(View view) {
+        // Get the existing task data
+        // For example:
+        String taskTitle = "Existing Task Title";
+        String taskDate = "Existing Task Date";
+        String taskStartTime = "Existing Task Start Time";
+        String taskEndTime = "Existing Task End Time";
+        String taskDescription = "Existing Task Description";
+
+        // Create a new instance of CreateTaskFragment
+        CreateTaskFragment createTaskFragment = CreateTaskFragment.newInstance(taskTitle, taskDate, taskStartTime, taskEndTime, taskDescription);
+
+        // Replace the current fragment with CreateTaskFragment
+        FragmentTransaction transaction = requireFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, createTaskFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }
-
-
-
-
