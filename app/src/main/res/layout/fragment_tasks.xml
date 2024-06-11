@@ -16,7 +16,6 @@
         android:id="@+id/tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="June 28, 2024"
         android:textSize="16sp" />
 
     <EditText
@@ -39,16 +38,13 @@
         android:textStyle="bold"
         android:layout_marginTop="16dp" />
 
+    <!-- This LinearLayout will hold dynamically added task views -->
     <LinearLayout
+        android:id="@+id/ll_tasks"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="8dp">
-
-        <include layout="@layout/item_task" />
-        <include layout="@layout/item_task" />
-        <include layout="@layout/item_task" />
-
     </LinearLayout>
 
 </LinearLayout>
