@@ -4,14 +4,32 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.viewpager.widget.PagerAdapter;
 
 public class ViewPageAdapter extends PagerAdapter {
-
-    private Context context;
-    private LayoutInflater layoutInflater;
+    Context context;
+    int images[] = {
+            R.drawable.image1,
+            R.drawable.image2,
+            R.drawable.image3,
+            R.drawable.image4,
+    };
+    int headings[] = {
+            R.string.heading_one,
+            R.string.heading_two,
+            R.string.heading_three,
+            R.string.heading_fourth
+    };
+    int description[] = {
+            R.string.desc_one,
+            R.string.desc_two,
+            R.string.desc_three,
+            R.string.desc_fourth
+    };
 
     public ViewPageAdapter(Context context) {
         this.context = context;
@@ -19,7 +37,7 @@ public class ViewPageAdapter extends PagerAdapter {
 
     @Override
     public int getCount() {
-        return 4; // Number of pages
+        return headings.length;
     }
 
     @Override
@@ -30,10 +48,16 @@ public class ViewPageAdapter extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.slider_layout, container, false);
 
-        // Configure your view here (e.g., set image, text based on position)
+        ImageView slidetitleimage = view.findViewById(R.id.titleImage);
+        TextView slideHeading = view.findViewById(R.id.texttitle);
+        TextView slideDescription = view.findViewById(R.id.textdeccription);
+
+        slidetitleimage.setImageResource(images[position]);
+        slideHeading.setText(headings[position]);
+        slideDescription.setText(description[position]);
 
         container.addView(view);
         return view;
