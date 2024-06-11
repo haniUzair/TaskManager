@@ -26,6 +26,8 @@
         <activity
             android:name=".RegistrationActivity"
             android:exported="true" />
+        <activity android:name=".HomeActivity"
+            android:exported="true" />
 
         <activity
             android:name=".MainActivity"

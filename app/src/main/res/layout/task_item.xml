@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:elevation="3dp"
+
+    >
+
+    <CheckBox
+        android:id="@+id/task_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:button="@drawable/checkbox_states"
+        android:elevation="2dp"/>
+
+
+    <TextView
+        android:id="@+id/task_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:text="Task Title"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:paddingStart="8dp" />
+
+    <TextView
+        android:id="@+id/task_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:layout_gravity="center_vertical"
+        android:text="Task Description"
+        android:paddingStart="8dp" />
+</LinearLayout>

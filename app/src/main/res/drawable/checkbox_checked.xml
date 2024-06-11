@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/purple"/> <!-- Your desired color for the checked state -->
+    <corners android:radius="50dp"/> <!-- Makes it circular -->
+    <size android:width="30dp" android:height="30dp"/> <!-- Your desired size -->
+</shape>

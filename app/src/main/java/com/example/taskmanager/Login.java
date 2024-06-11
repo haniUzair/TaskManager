@@ -43,6 +43,8 @@ public class Login extends AppCompatActivity {
                             // Sign-in success, update UI accordingly
                             Toast.makeText(Login.this, "Sign-in successful", Toast.LENGTH_SHORT).show();
                             // Navigate to another activity or perform any other action here
+                            startActivity(new Intent(Login.this, HomeActivity.class));
+                            finish();
                         } else {
                             // Sign-in failed, display an error message to the user
                             Toast.makeText(Login.this, "Sign-in failed: " + task.getException().getMessage(),
@@ -78,7 +80,7 @@ public class Login extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                            // Redirect to another activity or update the UI
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(Login.this, "Authentication failed.", Toast.LENGTH_SHORT).show();

@@ -2,12 +2,10 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="@color/white"/> <!-- Background color -->
     <corners android:radius="10dp"/> <!-- Rounded corners -->
-<!--    <stroke-->
-<!--        android:width="2dp"-->
-<!--        android:color="#989898"/> &lt;!&ndash; Border color and width &ndash;&gt;-->
+
     <padding
         android:left="8dp"
         android:top="8dp"
         android:right="8dp"
-        android:bottom="8dp"/> <!-- Padding inside the EditText -->
+        android:bottom="8dp"/> <!-- Optional padding -->
 </shape>
