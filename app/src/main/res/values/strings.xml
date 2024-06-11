@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Projectfinal</string>
+    <string name="app_nameee">Projectfinal</string>
     //Headings
     <string name="heading_one">"Stay Organized and Productive</string>
     <string name="heading_two">Plan, Track, and Achieve</string>
@@ -23,5 +23,18 @@
     <string name="title">Title</string>
     <string name="date">Date</string>
     <string name="designer">Designer</string>
+    <string name="app_namee">MyApp</string>
+    <string name="settings">Settings</string>
+    <string name="back">Back</string>
+    <string name="profile_image">Profile Image</string>
+    <string name="change_image">Change Image</string>
+    <string name="account">Account</string>
+    <string name="account_description">Privacy, security, changing email or number</string>
+    <string name="touch">Touch</string>
+    <string name="language">Language</string>
+    <string name="sync_with_google">Sync with Google</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="sync">sync</string>
 
 </resources>

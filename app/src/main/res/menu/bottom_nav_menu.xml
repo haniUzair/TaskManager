@@ -1,16 +1,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/navigation_calendar"
-        android:icon="@drawable/first"
-        android:title="Calendar" />
+        android:icon="@drawable/home"
+        android:title="Home" />
     <item
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/second"
-        android:title="Dashboard" />
+        android:title="Tasks" />
     <item
         android:id="@+id/navigation_dashboardempty"
 
-        android:title="Dashboard" />
+        android:title="" />
     <item
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/third"

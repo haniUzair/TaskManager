@@ -1,6 +1,5 @@
 package com.example.taskmanager;
 
-
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
@@ -50,7 +49,10 @@ public class HomeActivity extends AppCompatActivity {
             } else if (itemId == R.id.navigation_notifications) {
                 selectedFragment = new NotificationsFragment();
             } else if (itemId == R.id.navigation_profile) {
-                selectedFragment = new ProfileFragment();
+                // Open the ProfileActivity
+                Intent intent = new Intent(HomeActivity.this, ProfileFragment.class);
+                startActivity(intent);
+                return true;
             } else if (itemId == R.id.navigation_calendar) {
                 // Open the calendar activity
                 Intent intent = new Intent(HomeActivity.this, CalendarActivity.class);
@@ -67,10 +69,10 @@ public class HomeActivity extends AppCompatActivity {
             return true;
         });
 
-         //Initialize Firebase
-           FirebaseApp.initializeApp(this);
-           FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.getInstance();
-           firebaseAppCheck.installAppCheckProviderFactory(PlayIntegrityAppCheckProviderFactory.getInstance());
+        // Initialize Firebase
+        FirebaseApp.initializeApp(this);
+        FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.getInstance();
+        firebaseAppCheck.installAppCheckProviderFactory(PlayIntegrityAppCheckProviderFactory.getInstance());
     }
 
     // Method to load the selected fragment
@@ -120,4 +122,3 @@ public class HomeActivity extends AppCompatActivity {
         timePickerDialog.show();
     }
 }
-

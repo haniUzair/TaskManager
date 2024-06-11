@@ -7,7 +7,8 @@
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="@string/app_nameee"
+
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TaskManager"
@@ -28,6 +29,8 @@
             android:exported="true" />
         <activity android:name=".HomeActivity"
             android:exported="true" />
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".ProfileFragment" />
 
         <activity
             android:name=".MainActivity"
