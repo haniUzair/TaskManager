@@ -31,6 +31,7 @@
             android:exported="true" />
         <activity android:name=".CalendarActivity" />
         <activity android:name=".ProfileFragment" />
+        <activity android:name=".task_details" />
 
         <activity
             android:name=".MainActivity"
