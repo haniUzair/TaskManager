@@ -28,6 +28,11 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         FirebaseApp.initializeApp(this);
+
+        // Initialize FirebaseAppCheck
+        FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.getInstance();
+        firebaseAppCheck.installAppCheckProviderFactory(PlayIntegrityAppCheckProviderFactory.getInstance());
+
         // Load the initial fragment when the app starts
         if (savedInstanceState == null) {
             loadFragment(new TaskFragment());
@@ -39,28 +44,20 @@ public class HomeActivity extends AppCompatActivity {
 
         // Set up the bottom navigation view
         BottomNavigationView navView = findViewById(R.id.bottom_navigation);
-        navView.setOnNavigationItemSelectedListener(item -> {
+        navView.setOnItemSelectedListener(item -> {
             Fragment selectedFragment = null;
             int itemId = item.getItemId();
 
-            // Use if-else statements instead of switch-case
+            // Handle navigation item selection
             if (itemId == R.id.navigation_dashboard) {
                 selectedFragment = new TaskManagementFragment();
             } else if (itemId == R.id.navigation_notifications) {
-                Intent intent = new Intent(HomeActivity.this, task_details.class);
-                startActivity(intent);
+                startActivity(new Intent(HomeActivity.this, task_details.class));
                 return true;
             } else if (itemId == R.id.navigation_profile) {
-                // Open the ProfileActivity
-                Intent intent = new Intent(HomeActivity.this, ProfileFragment.class);
-                startActivity(intent);
+                startActivity(new Intent(HomeActivity.this, ProfileFragment.class));
                 return true;
-            } else if (itemId == R.id.navigation_calendar) {
-                // Open the calendar activity
-                Intent intent = new Intent(HomeActivity.this, CalendarActivity.class);
-                startActivity(intent);
-                return true;
-            } else {
+            }else {
                 return false;
             }
 
@@ -70,11 +67,6 @@ public class HomeActivity extends AppCompatActivity {
             }
             return true;
         });
-
-        // Initialize Firebase
-        FirebaseApp.initializeApp(this);
-        FirebaseAppCheck firebaseAppCheck = FirebaseAppCheck.getInstance();
-        firebaseAppCheck.installAppCheckProviderFactory(PlayIntegrityAppCheckProviderFactory.getInstance());
     }
 
     // Method to load the selected fragment
