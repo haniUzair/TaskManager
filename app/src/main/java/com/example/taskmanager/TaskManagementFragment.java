@@ -1,5 +1,7 @@
 package com.example.taskmanager;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -28,6 +31,7 @@ public class TaskManagementFragment extends Fragment {
     private FirebaseAuth auth;
     private ViewGroup successScreenContainer;
 
+    @SuppressLint("MissingInflatedId")
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -39,6 +43,7 @@ public class TaskManagementFragment extends Fragment {
         databaseReference = FirebaseDatabase.getInstance().getReference("Tasks");
 
         loadTasks();
+        addStaticTasks(inflater); // Add static tasks
 
         return view;
     }
@@ -99,5 +104,35 @@ public class TaskManagementFragment extends Fragment {
             successScreenContainer.removeView(successScreen);
             mediaPlayer.release();
         }, 3000); // Show the success screen for 3 seconds
+    }
+
+    private void addStaticTasks(LayoutInflater inflater) {
+        for (int i = 1; i <= 8; i++) {
+            View taskView = inflater.inflate(R.layout.task_item, null);
+            TextView taskTitle = taskView.findViewById(R.id.task_title);
+            TextView taskDescription = taskView.findViewById(R.id.task_description);
+            CheckBox taskCheckbox = taskView.findViewById(R.id.task_checkbox);
+
+            taskTitle.setText("Task " + i);
+            if (i == 1) {
+                taskTitle.setTextColor(getResources().getColor(R.color.green));
+            }
+
+            if (i == 1 || i == 6 || i == 7 || i == 8) {
+                taskDescription.setText("Study for the test");
+            } else {
+                taskDescription.setText("Go to the gym");
+            }
+
+            taskCheckbox.setOnCheckedChangeListener((buttonView, isChecked) -> {
+                if (isChecked) {
+                    showSuccessScreen();
+                } else {
+                    // Handle checkbox unchecked state if needed
+                }
+            });
+
+            taskList.addView(taskView);
+        }
     }
 }

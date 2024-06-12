@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:padding="16dp"
+    android:id="@+id/success_screen_container"
     android:background="@android:color/white">
 
     <ImageView
